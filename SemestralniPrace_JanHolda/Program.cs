@@ -1,4 +1,6 @@
 ﻿using SemestralniPrace_JanHolda.Functions.Login;
+using SemestralniPrace_JanHolda.Functions.Permice;
+using SemestralniPrace_JanHolda.Functions.Table;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +18,8 @@ namespace SemestralniPrace_JanHolda
         static void Main()
         {
             StaticLogin.CreateLoginFile();
+            StaticTable.CreateStaticTable();
+            StaticPermice.CreatePermiceFile();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
