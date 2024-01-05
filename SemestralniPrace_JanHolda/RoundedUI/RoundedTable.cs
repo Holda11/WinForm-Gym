@@ -11,13 +11,15 @@ namespace SemestralniPrace_JanHolda.RoundedUI
 {
     public class RoundedTable : DataGridView
     {
+        //Vlastnost
         private int borderRadius = 15;
 
+        //Constructor
         public RoundedTable() 
         {
             this.Size = new Size(200, 150);
         }
-        //Vlastnosti
+        //Get/Set Vlastnosti
         public int BorderRadius
         {
             get => borderRadius;

@@ -15,17 +15,19 @@ namespace SemestralniPrace_JanHolda.PopUps
     {
         public event EventHandler DoneWorking;
 
+        //Lokální proměná pro hodnoty z check boxů 
         string Choosen = "Klasický Vstup";
         public Vstupy()
         {
             InitializeComponent();
         }
-
+        //Metoda pro navýšení vstupů
         private void roundedButton1_Click(object sender, EventArgs e)
         {
             StaticTable.UpdateQtyAttendance(Choosen);
             DoneWorking?.Invoke(this, EventArgs.Empty);
         }
+        //Nastavování hodnoty z checkboxů
 
         private void NormalRButt_CheckedChanged(object sender, EventArgs e)
         {

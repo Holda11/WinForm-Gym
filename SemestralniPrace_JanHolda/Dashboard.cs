@@ -20,24 +20,33 @@ namespace SemestralniPrace_JanHolda
         public Dashboard()
         {
             InitializeComponent();
+            //Metoda pro načtení dat do tabulek
             LoadDataTable();
+            //Změna Textu Lablů podle celkového množství produktů ze souborů
             PermiceTotalLabel.Text = GetTotalQty("Permice", "data.json").ToString();
             VstupyTotalLabel.Text = GetTotalQty("Vstup", "data.json").ToString();
             BarTotalLabel.Text = GetTotalQty("Napoj", "bar.json").ToString();
         }
 
+        //Načtení dat do Tabulek
         private void LoadDataTable()
         {
+            //Proměná s názvem souboru
             string filePath = "data.json";
+            
+            //Ověření zda soubor existuje
             if (File.Exists(filePath))
             {
+                //Načtení dat ze souboru
                 string jsonData = File.ReadAllText(filePath);
 
+                //Deserializace dat
                 List<TableData> tableDatalist = JsonConvert.DeserializeObject<List<TableData>>(jsonData);
                 
-
+                //Nastavení Tabulky
                 TableAttendance.DataSource = tableDatalist;
 
+                //Nastavení názvu sloupců
                 TableAttendance.Columns["name"].HeaderText = "Jméno";
                 TableAttendance.Columns["type"].HeaderText = "Typ";
                 TableAttendance.Columns["qty"].HeaderText = "Množství";
@@ -46,6 +55,9 @@ namespace SemestralniPrace_JanHolda
             {
                 MessageBox.Show("Soubor neexistuje.");
             }
+
+            //"DUPLICITA"
+            //Stejný kód se změnou souboru
             string barPath = "bar.json";
             if (File.Exists(barPath))
             {
@@ -66,11 +78,15 @@ namespace SemestralniPrace_JanHolda
             }
             
         }
+        //Metoda dostání celkového množství položky
+        //Požadujeme kategorii a jméno souboru
         private int GetTotalQty(string category, string path)
         {
+            //načtení dat ze souboru
             string jsonData = File.ReadAllText(path);
             List<TableData> dataList = JsonConvert.DeserializeObject<List<TableData>>(jsonData);
             int totalQty = 0;
+            //podmínka podle souboru, u bar.json není třeba zjišťovat kategorii
             if(path == "data.json")
             {
                 foreach (var data in dataList)
@@ -91,6 +107,11 @@ namespace SemestralniPrace_JanHolda
 
             return totalQty;
         }
+
+        //Funkce pro znovu-načtení dat
+        //Funkce má dva argumenty:
+        //path: určuje soubor
+        //first: určuje o jakou tabulku se jedná
         private void RefreshTableData(string path, bool first)
         {
             string jsonData = File.ReadAllText(path);
@@ -113,10 +134,14 @@ namespace SemestralniPrace_JanHolda
                 TableBar.Columns["qty"].HeaderText = "Množství";
             }
         }
-
+        ////////////////////////////////////
+        //Metody pro spuštení Pop-Up Formu//
+        ////////////////////////////////////
         private void PermiceButt_Click(object sender, EventArgs e)
         {
+            //Vytvoření permiceForm
             Permice permiceForm = new Permice();
+            //Funkce pro zavření okna
             permiceForm.DoneWorking += (s, args) =>
             {
                 if (s is Permice permice)
@@ -124,6 +149,7 @@ namespace SemestralniPrace_JanHolda
                     permice.Close();
                 }
             };
+            //Funkce pro obnovení dat
             permiceForm.FormClosed += (s, args) =>
             {
                 RefreshTableData("data.json", true); 

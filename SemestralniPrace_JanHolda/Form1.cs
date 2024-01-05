@@ -17,16 +17,21 @@ namespace SemestralniPrace_JanHolda
         {
             InitializeComponent();
         }
-
+        //Login Function
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
+            //Proměnné pro login
             string username;
             string password;
 
+            //Přiřazení hodnoty pro proměnné
             username = BoxUserName.Text;
             password = BoxUserPass.Text;
 
+            //Ukládání výsledku TryLoginFile metody
             var TryLogin = StaticLogin.TryLoginFile(username,password);
+            
+            //Validace
             if(TryLogin == true)
             {
             this.Hide();
@@ -35,6 +40,10 @@ namespace SemestralniPrace_JanHolda
             dashboard.ShowDialog();
 
             Application.Exit(); 
+            }
+            else
+            {
+                MessageBox.Show("Špatně zadané údaje");
             }
             
         }

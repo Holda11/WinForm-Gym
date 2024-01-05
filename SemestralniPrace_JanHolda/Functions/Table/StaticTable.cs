@@ -11,6 +11,7 @@ using System.Drawing.Drawing2D;
 
 namespace SemestralniPrace_JanHolda.Functions.Table
 {
+    //Vytvoření TableData pro nastavení objektu
     public class TableData
     {
         public string name { get; set; }
@@ -19,6 +20,7 @@ namespace SemestralniPrace_JanHolda.Functions.Table
     }
     public class StaticTable
     {
+        //Metoda pro vytvoření souborů s hodnoty, pokuď již neexistuje
         public static void CreateStaticTable()
         {
             string filePath = "data.json";
@@ -76,6 +78,7 @@ namespace SemestralniPrace_JanHolda.Functions.Table
                 Console.WriteLine("Soubor již existuje");
             }
         }
+        //Zvětšení množství položky v souboru data.json
         public static void UpdateQtyAttendance(string dataQty)
         {
             string filePath = "data.json";
@@ -93,6 +96,7 @@ namespace SemestralniPrace_JanHolda.Functions.Table
             string newData = JsonConvert.SerializeObject(dataList);
             File.WriteAllText(filePath, newData);
         }
+        //Zvětšení množství položky v souboru bar.json
         public static void UpdateQtyBar(string dataName, int dataValue)
         {
             string filePath = "bar.json";

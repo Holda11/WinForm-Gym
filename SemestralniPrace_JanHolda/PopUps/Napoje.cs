@@ -21,6 +21,7 @@ namespace SemestralniPrace_JanHolda.PopUps
             InitializeComponent();
             LoadData();
         }
+        //Načtení dat do NumericBoxu
         private void LoadData()
         {
             string filePath = "bar.json";
@@ -50,7 +51,7 @@ namespace SemestralniPrace_JanHolda.PopUps
                 }
             }
         }
-
+        //Uložení hodnot z NumericBoxu do souboru
         private void NapojePButton_Click(object sender, EventArgs e)
         {
             string filePath = "bar.json";

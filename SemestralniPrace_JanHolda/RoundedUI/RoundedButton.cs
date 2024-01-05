@@ -12,7 +12,7 @@ namespace SemestralniPrace_JanHolda.RoundedUI
 {
     public class RoundedButton : Button
     {
-        //Hodnoty v nástrojích
+        //Default hodnoty
         private int borderSize = 0;
         private int borderRadius = 40;
         private Color borderColor = Color.White;
@@ -111,17 +111,19 @@ namespace SemestralniPrace_JanHolda.RoundedUI
                 }
             }
         }
+        //Vytvoření Buttonu
         protected override void OnHandleCreated(EventArgs e)
         {
             base.OnHandleCreated(e);
             this.Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
         }
-
+        //Změna pozadí
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
             if(this.DesignMode)
                 this.Invalidate();
         }
+        //Změna velikosti
         private void Button_Resize(object sender, EventArgs e)
         {
             if (borderRadius > this.Height)

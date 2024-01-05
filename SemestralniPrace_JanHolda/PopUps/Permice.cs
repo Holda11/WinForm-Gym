@@ -23,6 +23,7 @@ namespace SemestralniPrace_JanHolda.PopUps
 
         private void PotvrditButt_Click(object sender, EventArgs e)
         {
+            //Vytvoření nového objektu PermiceData
             PermiceData data = new PermiceData
             {
                 Firstname = NameBox.Text,
@@ -32,6 +33,7 @@ namespace SemestralniPrace_JanHolda.PopUps
                 Platba = PlatbaBox.Text,
                 Note = NoteBox.Text
             };
+            //Volání Funkce AddPermice a přidání nové permice do souboru
             StaticPermice.AddPermice(data, data.PermType);
             DoneWorking?.Invoke(this, EventArgs.Empty);
         }

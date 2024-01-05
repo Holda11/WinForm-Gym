@@ -114,7 +114,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.TableBar.DefaultCellStyle = dataGridViewCellStyle3;
             this.TableBar.GridColor = System.Drawing.SystemColors.Control;
-            this.TableBar.Location = new System.Drawing.Point(431, 293);
+            this.TableBar.Location = new System.Drawing.Point(431, 331);
             this.TableBar.Name = "TableBar";
             this.TableBar.ReadOnly = true;
             this.TableBar.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -160,7 +160,7 @@
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.TableAttendance.DefaultCellStyle = dataGridViewCellStyle7;
             this.TableAttendance.GridColor = System.Drawing.SystemColors.Control;
-            this.TableAttendance.Location = new System.Drawing.Point(37, 293);
+            this.TableAttendance.Location = new System.Drawing.Point(37, 331);
             this.TableAttendance.Name = "TableAttendance";
             this.TableAttendance.ReadOnly = true;
             this.TableAttendance.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
@@ -184,7 +184,7 @@
             this.roundedPanel7.Controls.Add(this.SuplementButt);
             this.roundedPanel7.Controls.Add(this.SuplementCardHeading);
             this.roundedPanel7.Controls.Add(this.CardSuplement);
-            this.roundedPanel7.Location = new System.Drawing.Point(626, 12);
+            this.roundedPanel7.Location = new System.Drawing.Point(626, 50);
             this.roundedPanel7.Name = "roundedPanel7";
             this.roundedPanel7.Size = new System.Drawing.Size(189, 186);
             this.roundedPanel7.TabIndex = 3;
@@ -236,7 +236,7 @@
             this.roundedPanel6.Controls.Add(this.NapojeButt);
             this.roundedPanel6.Controls.Add(this.NapojeCardHeading);
             this.roundedPanel6.Controls.Add(this.CardNapoje);
-            this.roundedPanel6.Location = new System.Drawing.Point(431, 12);
+            this.roundedPanel6.Location = new System.Drawing.Point(431, 50);
             this.roundedPanel6.Name = "roundedPanel6";
             this.roundedPanel6.Size = new System.Drawing.Size(189, 186);
             this.roundedPanel6.TabIndex = 3;
@@ -288,7 +288,7 @@
             this.roundedPanel5.Controls.Add(this.VstupyButt);
             this.roundedPanel5.Controls.Add(this.VstupyCardHeading);
             this.roundedPanel5.Controls.Add(this.CardVstupy);
-            this.roundedPanel5.Location = new System.Drawing.Point(236, 12);
+            this.roundedPanel5.Location = new System.Drawing.Point(236, 50);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Size = new System.Drawing.Size(189, 186);
             this.roundedPanel5.TabIndex = 3;
@@ -340,7 +340,7 @@
             this.roundedPanel4.Controls.Add(this.PermiceButt);
             this.roundedPanel4.Controls.Add(this.PermiceCardHeading);
             this.roundedPanel4.Controls.Add(this.CardPermice);
-            this.roundedPanel4.Location = new System.Drawing.Point(41, 12);
+            this.roundedPanel4.Location = new System.Drawing.Point(41, 50);
             this.roundedPanel4.Name = "roundedPanel4";
             this.roundedPanel4.Size = new System.Drawing.Size(189, 186);
             this.roundedPanel4.TabIndex = 2;
@@ -392,7 +392,7 @@
             this.roundedPanel3.Controls.Add(this.BarTotalLabel);
             this.roundedPanel3.Controls.Add(this.IconBar);
             this.roundedPanel3.Controls.Add(this.BarStaticLabel);
-            this.roundedPanel3.Location = new System.Drawing.Point(563, 204);
+            this.roundedPanel3.Location = new System.Drawing.Point(563, 242);
             this.roundedPanel3.Name = "roundedPanel3";
             this.roundedPanel3.Size = new System.Drawing.Size(257, 68);
             this.roundedPanel3.TabIndex = 1;
@@ -436,7 +436,7 @@
             this.roundedPanel2.Controls.Add(this.VstupyTotalLabel);
             this.roundedPanel2.Controls.Add(this.IconVstupy);
             this.roundedPanel2.Controls.Add(this.VstupyStaticLabel);
-            this.roundedPanel2.Location = new System.Drawing.Point(300, 204);
+            this.roundedPanel2.Location = new System.Drawing.Point(300, 242);
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Size = new System.Drawing.Size(257, 68);
             this.roundedPanel2.TabIndex = 1;
@@ -480,7 +480,7 @@
             this.roundedPanel1.Controls.Add(this.PermiceTotalLabel);
             this.roundedPanel1.Controls.Add(this.IconPermice);
             this.roundedPanel1.Controls.Add(this.PermiceStaticLabel);
-            this.roundedPanel1.Location = new System.Drawing.Point(37, 204);
+            this.roundedPanel1.Location = new System.Drawing.Point(37, 242);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Size = new System.Drawing.Size(257, 68);
             this.roundedPanel1.TabIndex = 0;
@@ -523,7 +523,7 @@
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.BackgroundImage = global::SemestralniPrace_JanHolda.Properties.Resources.Group_32;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(858, 622);
+            this.ClientSize = new System.Drawing.Size(858, 698);
             this.Controls.Add(this.TableBar);
             this.Controls.Add(this.TableAttendance);
             this.Controls.Add(this.roundedPanel7);

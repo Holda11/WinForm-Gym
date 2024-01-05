@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 
 namespace SemestralniPrace_JanHolda.Functions.Login
 {
+    //Vytvoření LoginData pro nastavení objektu
     public class LoginData
     {
         public string login { get; set; }
@@ -18,12 +19,14 @@ namespace SemestralniPrace_JanHolda.Functions.Login
 
     public class StaticLogin
     {
+        //Funkce CreateLoginFile, jenž vytvoří soubor 
         public static void CreateLoginFile()
         {
             string filePath = "login.json";
 
             if (!File.Exists(filePath))
             {
+                //Vytvoření dat, jenž chceme dát do login.json souboru
                 LoginData loginData = new LoginData
                 {
                     login = "Admin",
@@ -43,17 +46,22 @@ namespace SemestralniPrace_JanHolda.Functions.Login
                 Console.WriteLine("Soubor již existuje");
             }
         }
+        //Funkce pro zkusení přihlášení
+        //Metoda vrací zpátky Bool, jenž určí, zda zadané údaje  jsou stejné jako v souboru
         public static bool TryLoginFile(string username, string password)
         {
             string filePath = "login.json";
 
-
+            //Zjištění zda soubor exituje
             if (File.Exists(filePath))
             {
+                //Přečtení dat ze souboru
                 string jsonData = File.ReadAllText(filePath);
 
+                //Deserializace Dat
                 LoginData savedLoginData = JsonConvert.DeserializeObject<LoginData>(jsonData);
 
+                //Ověření platnosti
                 if (username == savedLoginData.login && password == savedLoginData.password)
                 {
                     return true;

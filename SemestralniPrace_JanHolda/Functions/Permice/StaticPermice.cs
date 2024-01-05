@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SemestralniPrace_JanHolda.Functions.Permice
 {
+    //Vytvoření PermiceData pro nastavení objektu
     public class PermiceData
     {
         public string Firstname { get; set ;}
@@ -22,6 +23,8 @@ namespace SemestralniPrace_JanHolda.Functions.Permice
     }
     public class StaticPermice
     {
+        //Metoda pro vytvoření souboru (kdyby neexistoval)
+        //Stejná metoda jako ve StaticLogin
         public static void CreatePermiceFile()
         {
             string filePath = "permice.json";
@@ -44,6 +47,8 @@ namespace SemestralniPrace_JanHolda.Functions.Permice
             }
 
         }
+        //Metoda pro přidání nové hodnoty do permice.json
+        //Metoda má argumenty PermiceData a category
         public static void AddPermice(PermiceData data, string category)
         {
             string filePath = "permice.json";
@@ -53,6 +58,8 @@ namespace SemestralniPrace_JanHolda.Functions.Permice
             {
                 string jsonData = File.ReadAllText(filePath);
                 seznam = JsonConvert.DeserializeObject<List<PermiceData>>(jsonData);
+                
+                //Přidávání údaju do souboru data.json
                 StaticTable.UpdateQtyAttendance(category);
             }
             else
